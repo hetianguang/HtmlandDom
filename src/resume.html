@@ -31,6 +31,42 @@
     .description {
         background-color: #eee;
     }
+    .skills-legend:before {
+        content:"";
+        position:relative;
+        height:3px;
+        background:#c6c6c6;
+        display:block;
+    }
+    .legend:before {
+        width: 3px;
+        height: 10px;
+        position: relative;
+        content: ' ';
+        display: block;
+        margin: auto;
+        margin-bottom: 15px;
+        background: #c6c6c6;
+    }
+    .legend-left {
+        width:25%;
+        float:left;
+        text-align: left
+    }
+    .legend-left:before {
+        margin-left:0
+    }
+    .legend-right:before {
+        margin-right: 0;
+    }
+     .legend-right {
+        width:25%;
+        float:left;
+        text-align:right
+    }
+    .clearfix:after {
+        clear: both
+    }
     
 
 </style>
@@ -171,10 +207,10 @@
                         </div>
                         </div>
                     </div>
-                    <div class="skills-legend" style="height:3px;background: #c6c6c6; ">
+                    <div class="skills-legend clearfix">
                         <div style="display:inline-block" class="legend-left legend"> Beginner</div>
-                        <div style="display:inline-block" class="legend-left legend"> Proficient</div>
-                        <div style="display:inline-block" class="legend-right legend"> Expert</div>
+                        <div style="display:inline-block" class="legend-left legend"><span style="margin-left:-25px">Proficient</span> </div>
+                        <div style="display:inline-block" class="legend-right legend"> <span style="margin-right:-20px">Expert</span></div>
                         <div style="display:inline-block" class="legend-right legend"> Master</div>
                     </div>
                     <div class="languages">
