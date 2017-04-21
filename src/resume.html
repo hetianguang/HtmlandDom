@@ -31,6 +31,34 @@
     .description {
         background-color: #eee;
     }
+    .col-md-2:before {
+        width: 1px;
+        height: 190px;
+        position: relative;
+        content: ' ';
+        display: block;
+        margin: auto;
+        margin-right: 10px;
+        float: right;
+        background: #c6c6c6;
+    }
+    .tag:before {
+        width: 30px;
+        height: 1px;
+        position: relative;
+        content: ' ';
+        display: block;
+        margin: 10px auto;
+        background: #aaa;
+    }
+    .glyphicon-contact {
+        margin-left: 20px;
+    }
+    .info {
+        margin-left: -30px;
+        margin-top: 5px;
+    }
+
     .skills-legend:before {
         content:"";
         position:relative;
@@ -50,6 +78,7 @@
     }
     .legend-left {
         width:25%;
+        font-size:12px;
         float:left;
         text-align: left
     }
@@ -62,6 +91,7 @@
      .legend-right {
         width:25%;
         float:left;
+        font-size:12px;
         text-align:right
     }
     .clearfix:after {
@@ -150,29 +180,31 @@
                     <div class="contact">
                         <h4 style="color: #EC7263"><strong>// CONTACT</strong></h4>
                         <div class="row">
-                            <div class="col-md-1 method">
-                                 <div><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></div>
-                                 <div><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div>
-                                 <div><span class="glyphicon glyphicon-send" aria-hidden="true"></span></div>
-                                 <div><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></div>
-                                 <div><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                            <div class="col-md-2">
+                                <div class="method">
+                                 <div><span class="glyphicon glyphicon-earphone glyphicon-contact" aria-hidden="true"></span></div>
+                                 <div class="tag tag-top"><span class="glyphicon glyphicon-envelope glyphicon-contact" aria-hidden="true"></span></div>
+                                 <div class="tag tag-top"><span class="glyphicon glyphicon-send glyphicon-contact" aria-hidden="true"></span></div>
+                                 <div class="tag tag-bottom"><span class="glyphicon glyphicon-globe glyphicon-contact" aria-hidden="true"></span></div>
+                                 <div class="tag tag-bottom"><span class="glyphicon glyphicon-user glyphicon-contact" aria-hidden="true"></span></div>
+                                </div>
                             </div>
-                            <div class="col-md-11 content">
-                                <div class="tell" style="margin-bottom:10px; font-size:16px;font-weight:700;">
+                            <div class="col-md-10 content">
+                                <div class="tell info" style="margin-bottom:10px; font-size:16px;font-weight:700;">
                                     <strong>500 345 242</strong>
                                 </div>
-                                <div class="e-mail" style="font-size:16px;font-weight:700;margin-top:10px; margin-bottom:10px">
+                                <div class="e-mail info" style="font-size:16px;font-weight:700;margin-top:10px; margin-bottom:10px">
                                     <span><strong>office@kamsolutions.pl</strong></span>
                                 </div>
-                                <div class="twitter">
+                                <div class="twitter info">
                                     <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Twitter</h4>
                                     <a style="color: #363636; font-size:12px">Twitterhttps://twitter.com/WordPress</a>
                                 </div>
-                                <div class="faceback">
+                                <div class="faceback info">
                                     <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Facebook</h4>
                                     <a style="color: #363636; font-size:12px">https://www.facebook.com/facebook</a>
                                 </div>
-                                <div class=skype >
+                                <div class="skype info">
                                     <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Skype</h4>
                                     <a style="color: #363636; font-size:12px">Skypekamsolutions.pl</a>
                                 </div>
