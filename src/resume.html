@@ -1,294 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>my resume</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
+
 <body>
-<style>
-    body{
-        background: lightgray;
-    }
-    .container {
-        margin-top: 100px;
-        background: white;
-    }
-
-    .text-header{
-        text-align:center;
-    }
-    .headerImag img{
-        margin:auto;
-        margin-top: -75px;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-    }
-    .description_total {
-        margin-top:10px;
-    }
-    .description {
-        background-color: #eee;
-    }
-    .col-md-2:before {
-        width: 1px;
-        height: 190px;
-        position: relative;
-        content: ' ';
-        display: block;
-        margin: auto;
-        margin-right: 10px;
-        float: right;
-        background: #c6c6c6;
-    }
-    .tag:before {
-        width: 30px;
-        height: 1px;
-        position: relative;
-        content: ' ';
-        display: block;
-        margin: 10px auto;
-        background: #aaa;
-    }
-    .glyphicon-contact {
-        margin-left: 20px;
-    }
-    .info {
-        margin-left: -30px;
-        margin-top: 5px;
-    }
-
-    .skills-legend:before {
-        content:"";
-        position:relative;
-        height:3px;
-        background:#c6c6c6;
-        display:block;
-    }
-    .legend:before {
-        width: 3px;
-        height: 10px;
-        position: relative;
-        content: ' ';
-        display: block;
-        margin: auto;
-        margin-bottom: 15px;
-        background: #c6c6c6;
-    }
-    .legend-left {
-        width:25%;
-        font-size:12px;
-        float:left;
-        text-align: left
-    }
-    .legend-left:before {
-        margin-left:0
-    }
-    .legend-right:before {
-        margin-right: 0;
-    }
-     .legend-right {
-        width:25%;
-        float:left;
-        font-size:12px;
-        text-align:right
-    }
-    .clearfix:after {
-        clear: both
-    }
-    
-
-</style>
+    <style>
+        body {
+            background: lightgray;
+        }
+        
+        /*.text-header:after {
+            width: 100%;
+            height: 3px;
+            background: #c6c6c6;
+            margin-top: 15px;
+            content: '';
+            display: block;
+        }*/
+        
+        .container {
+            margin-top: 100px;
+            background: white;
+        }
+        
+        .text-header {
+            text-align: center;
+        }
+        
+        .headerImag img {
+            margin: auto;
+            margin-top: -75px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        .description_total {
+            margin-top: 10px;
+        }
+        
+        .description {
+            background-color: #eee;
+            margin-left: -50px;
+        }
+        
+        .education-info {
+            margin-top: 20px;
+            position: relative;
+            padding: 1em 0;
+            list-style: none;
+        }
+        
+        .education-info:before {
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            left: 25px;
+            top: 0;
+            content: ' ';
+            display: block;
+            background: #ec7263;
+        }
+        
+        h3 {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+        }
+        
+        .year {
+            width: 10%;
+            background: #fff;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            display: inline-block;
+        }
+        
+        .pull-right {
+            float: right;
+        }
+        
+        .description {
+            width: 70%;
+            display: inline-block;
+            background: #eee;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            position: relative;
+            padding: 10px 10px 0 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        li {
+            width: 100%;
+            position: relative;
+            float: left;
+        }
+        
+        .description p {
+            font-size: 12px;
+            margin-top: 5px;
+            padding: 0;
+        }
+        
+        .description:after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: 0;
+            left: -16px;
+            height: 0;
+            width: 0;
+            border: solid transparent;
+            border-right-color: #eee;
+            border-width: 8px;
+            pointer-events: none;
+        }
+        
+        .contact-info:before {
+            width: 1px;
+            height: 190px;
+            position: relative;
+            content: ' ';
+            display: block;
+            margin: auto;
+            margin-right: 10px;
+            float: right;
+            background: #c6c6c6;
+        }
+        
+        .tag:before {
+            width: 30px;
+            height: 1px;
+            position: relative;
+            content: ' ';
+            display: block;
+            margin: 10px auto;
+            background: #aaa;
+        }
+        
+        .glyphicon-contact {
+            margin-left: 20px;
+        }
+        
+        .info {
+            margin-left: -30px;
+            margin-top: 5px;
+        }
+        
+        .skills-legend:before {
+            content: "";
+            position: relative;
+            height: 3px;
+            background: #c6c6c6;
+            display: block;
+        }
+        
+        .skills-legend {
+            margin-top:20px
+        }
+        .legend:before {
+            width: 3px;
+            height: 10px;
+            position: relative;
+            content: ' ';
+            display: block;
+            margin: auto;
+            margin-bottom: 15px;
+            background: #c6c6c6;
+        }
+        
+        .legend-left {
+            width: 25%;
+            font-size: 12px;
+            float: left;
+            text-align: left
+        }
+        
+        .legend-left:before {
+            margin-left: 0
+        }
+        
+        .legend-right:before {
+            margin-right: 0;
+        }
+        
+        .legend-right {
+            width: 25%;
+            float: left;
+            font-size: 12px;
+            text-align: right
+        }
+        
+        .clearfix:after {
+            clear: both
+        }
+    </style>
     <div class="main container">
         <div class="row">
             <div class="col-md-12">
-                <div class="headerImag" >
+                <div class="headerImag">
                     <img src="./css/avatar.jpg" class="img-circle center-block">
                 </div>
                 <div class="text-header">
                     <h1>
                         <b>HELLO,</b><br>
-                        <h2><p>MY NAME IS<span style="color: red">KAMIL</span><sup style="color: grey">24YO</sup>AND THIS IS MY RESUME/CV</p></h2>
+                        <h2>
+                            <p>MY NAME IS<span style="color: red">KAMIL</span><sup style="color: grey">24YO</sup>AND THIS IS
+                                MY RESUME/CV</p>
+                        </h2>
                     </h1>
                 </div>
+                <hr style="margin-bottom: 0px;margin-top:0%">
+                <hr style="margin-top: 1px; margin-bottom:0%">
             </div>
         </div>
-        <div class="row">
-                <div class="col-md-7 left">
-                    <div class="about-me">
-                        <h4 style="color: #EC7263"><strong>// ABOUT ME</strong></h4>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, non, dolorem, cumque distinctio magni quam expedita velit laborum sunt amet facere tempora ut fuga aliquam ad asperiores voluptatem dolorum! Quasi.
-                    </div>
-                    <div class="education" >
-                        <h4 style="color: #EC7263"><strong>// EDUCATION</strong></h4>
-                        <div class="row">
-                            <div class="col-md-1" style="height:100%">
-                                <p style="padding:35px 0px 0px 0px">1990</p>
-                                <p style="padding:50px 0px 0px 0px">2005</p>
-                                <p style="padding:40px 0px 0px 0px">2009</p>
-                                <p style="padding:50px 0px 0px 0px">2012</p>
+        <div class="row" style="margin-top:10px">
+            <div class="col-md-7 left">
+                <div class="about-me">
+                    <h4 style="color: #EC7263"><strong>// ABOUT ME</strong></h4>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, non, dolorem, cumque distinctio magni quam expedita
+                    velit laborum sunt amet facere tempora ut fuga aliquam ad asperiores voluptatem dolorum! Quasi.
+                </div>
+                <div class="education"  style="margin-top:20px">
+                    <h4 style="color: #EC7263"><strong>// EDUCATION</strong></h4>
+                    <ul class="education-info clearfix">
+                        <li>
+                            <div class="year pull-left"> 1990</div>
+                            <div class="description pul-right">
+                                <h3>I was born in Katowice</h3>
+                                <p class="1990">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam,
+                                    dolores iste dolore est aut modi.
+                                </p>
                             </div>
-                            <div class="col-md-11 description_total">
-                                <div class="description">
-                                    <h3 style="font-size:18px;font-weight:bold; margin-top:5px; margin-bottom:5px">I was born in Katowice</h3>
-                                    <p class="1990" style="padding:0px 0px 5px 0px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.
-                                    </p>
-                                </div>
-                                <div class="description">
-                                    <h3 style="font-size:18px;font-weight:bold; margin-top:5px;margin-bottom:5px">Secondary school specializing in artistic</h3>
-                                    <p class="2005" style="padding:0px 0px 5px 0px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.
-                                    </p>
-                                </div>
-                                <div class="description">
-                                    <h3 style="font-size:16px;font-weight:bold; margin-top:5px;margin-bottom:5px">First level graduation in Graphic Design</h3>
-                                    <p class="2009" style="padding:0px 0px 5px 0px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.
-                                    </p>
-                                </div>
-                                <div class="description">
-                                    <h3 style="font-size:16px;font-weight:bold; margin-top:5px;margin-bottom:5px">Second level graduation in Graphic Design</h3>
-                                    <p class="2012" style="padding:0px 0px 5px 0px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.
-                                    </p>
-                                </div>
+                        </li>
+                        <li>
+                            <div class="year pull-left"> 1990</div>
+                            <div class="description pul-right">
+                                <h3>Secondary school specializing in artistic</h3>
+                                <p class="1990">Eos, explicabo, nam, tenetur et ab eius deserunt aspernatur ipsum ducimus quibusdam quis
+                                    voluptatibus.
+                                </p>
                             </div>
+                        </li>
+                        <li>
+                            <div class="year pull-left"> 1990</div>
+                            <div class="description pul-right">
+                                <h3>First level graduation in Graphic Design</h3>
+                                <p class="1990">Aspernatur, mollitia, quos maxime eius suscipit sed beatae ducimus quaerat quibusdam perferendis?
+                                    Iusto, quibusdam asperiores unde repellat.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="year pull-left"> 1990</div>
+                            <div class="description pul-right">
+                                <h3>Second level graduation in Graphic Design</h3>
+                                <p class="1990">Ducimus, aliquam tempore autem itaque et accusantium!
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="experiences" style="margin-top:30px">
+                    <h4 style="color: #EC7263"><strong>// EXPERIENCES</strong></h4>
+                    <div class="col-md-3">
+                        <div class="corporation">
+                            <div style="margin-top:0px">
+                                <h5 style="margin-bottom:0%; font-weight:bold; font-size: 14px">Google</h5>
+                                <span style="display:block; font-size:12px">2013 - 2014</span>
+                            </div>
+                            <div style="margin-top:55px" style="margin-top:10px">
+                                <h5 style="margin-bottom:0%; font-weight:bold; font-size: 14px">Twitter</h5>
+                                <span style="display:block; font-size:12px">2012</span></div>
                         </div>
                     </div>
-                    <div class="experiences">
-                        <h4 style="color: #EC7263"><strong>// EXPERIENCES</strong></h4>
-                        <div class="col-md-3">
-                            <div class="corporation">
-                                <div style="margin-top:0px">
-                                    <h5 style="margin-bottom:0%; font-weight:bold; font-size: 14px">Google</h5> 
-                                    <span style="display:block; font-size:12px">2013 - 2014</span>
-                                    </div>
-                                <div style="margin-top:55px">
-                                    <h5 style="margin-bottom:0%; font-weight:bold; font-size: 14px">Twitter</h5>
-                                    <span style="display:block; font-size:12px">2012</span></div>
+                    <div class="col-md-9">
+                        <div class="content">
+                            <h5 class="title" style="font-size:16px;font-weight:bold">Front-end developer / php programmer</h5>
+                            <p style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, et, illum perferendis veritatis
+                                velit sunt similique qui magni totam harum tempore eius laboriosam accusantium necessitatibus
+                                voluptatum? Enim, itaque dignissimos quia.</p>
+                            <h5 class="title" style="font-size:16px;font-weight:bold" >Web Developer</h5>
+                            <p style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, nihil sit nemo voluptatem praesentium.
+                                Quia, qui facere consectetur libero asperiores fugiat consequuntur deserunt culpa repudiandae
+                                sed quidem voluptas explicabo soluta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 right">
+                <div class="contact">
+                    <h4 style="color: #EC7263"><strong>// CONTACT</strong></h4>
+                    <div class="row">
+                        <div class="col-md-2 contact-info">
+                            <div class="method">
+                                <div><span class="glyphicon glyphicon-earphone glyphicon-contact" aria-hidden="true"></span></div>
+                                <div class="tag tag-top"><span class="glyphicon glyphicon-envelope glyphicon-contact" aria-hidden="true"></span></div>
+                                <div class="tag tag-top"><span class="glyphicon glyphicon-send glyphicon-contact" aria-hidden="true"></span></div>
+                                <div class="tag tag-bottom"><span class="glyphicon glyphicon-globe glyphicon-contact" aria-hidden="true"></span></div>
+                                <div class="tag tag-bottom"><span class="glyphicon glyphicon-user glyphicon-contact" aria-hidden="true"></span></div>
                             </div>
                         </div>
-                        <div class="col-md-9">
-                            <div class="content">
-                                 <h5 class="title" style="font-size:16px;font-weight:bold">Front-end developer / php programmer</h5>   
-                                 <p  style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, et, illum perferendis veritatis velit sunt similique qui magni totam harum tempore eius laboriosam accusantium necessitatibus voluptatum? Enim, itaque dignissimos quia.</p>
-                                 <h5 class="title" style="font-size:16px;font-weight:bold">Web Developer</h5>
-                                 <p style="font-size: 12px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, nihil sit nemo voluptatem praesentium. Quia, qui facere consectetur libero asperiores fugiat consequuntur deserunt culpa repudiandae sed quidem voluptas explicabo soluta.</p>
+                        <div class="col-md-10 content">
+                            <div class="tell info" style="margin-bottom:10px; font-size:16px;font-weight:700;">
+                                <strong>500 345 242</strong>
+                            </div>
+                            <div class="e-mail info" style="font-size:16px;font-weight:700;margin-top:10px; margin-bottom:10px">
+                                <span><strong>office@kamsolutions.pl</strong></span>
+                            </div>
+                            <div class="twitter info">
+                                <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Twitter</h4>
+                                <a style="color: #363636; font-size:12px">Twitterhttps://twitter.com/WordPress</a>
+                            </div>
+                            <div class="faceback info">
+                                <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Facebook</h4>
+                                <a style="color: #363636; font-size:12px">https://www.facebook.com/facebook</a>
+                            </div>
+                            <div class="skype info">
+                                <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Skype</h4>
+                                <a style="color: #363636; font-size:12px">Skypekamsolutions.pl</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 right">
-                    <div class="contact">
-                        <h4 style="color: #EC7263"><strong>// CONTACT</strong></h4>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="method">
-                                 <div><span class="glyphicon glyphicon-earphone glyphicon-contact" aria-hidden="true"></span></div>
-                                 <div class="tag tag-top"><span class="glyphicon glyphicon-envelope glyphicon-contact" aria-hidden="true"></span></div>
-                                 <div class="tag tag-top"><span class="glyphicon glyphicon-send glyphicon-contact" aria-hidden="true"></span></div>
-                                 <div class="tag tag-bottom"><span class="glyphicon glyphicon-globe glyphicon-contact" aria-hidden="true"></span></div>
-                                 <div class="tag tag-bottom"><span class="glyphicon glyphicon-user glyphicon-contact" aria-hidden="true"></span></div>
-                                </div>
-                            </div>
-                            <div class="col-md-10 content">
-                                <div class="tell info" style="margin-bottom:10px; font-size:16px;font-weight:700;">
-                                    <strong>500 345 242</strong>
-                                </div>
-                                <div class="e-mail info" style="font-size:16px;font-weight:700;margin-top:10px; margin-bottom:10px">
-                                    <span><strong>office@kamsolutions.pl</strong></span>
-                                </div>
-                                <div class="twitter info">
-                                    <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Twitter</h4>
-                                    <a style="color: #363636; font-size:12px">Twitterhttps://twitter.com/WordPress</a>
-                                </div>
-                                <div class="faceback info">
-                                    <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Facebook</h4>
-                                    <a style="color: #363636; font-size:12px">https://www.facebook.com/facebook</a>
-                                </div>
-                                <div class="skype info">
-                                    <h4 class="name" style="margin-bottom:0px;font-size:16px;font-weight:700;">Skype</h4>
-                                    <a style="color: #363636; font-size:12px">Skypekamsolutions.pl</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills">
-                        <h4 style="color: #EC7263"><strong>// SKILLS</strong></h4>
-                        <div class="progress">
-                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                <div class="skills">
+                    <h4 style="color: #EC7263"><strong>// SKILLS</strong></h4>
+                    <div class="progress" style="height:30px;margin-bottom:5px">
+                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                            style="width: 90%; background:#F0563D">
                             HTML
                         </div>
-                        </div>
-                        <div class="progress">
-                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                    </div>
+                    <div class="progress" style="height:30px;margin-bottom:5px">
+                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                            style="width: 80%; background:#F0563D">
                             CSS
                         </div>
-                        </div>
-                        <div class="progress">
-                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                    </div>
+                    <div class="progress" style="height:30px;margin-bottom:5px">
+                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                            style="width: 70%; background:#F0563D">
                             jQuery
                         </div>
-                        </div>
-                        <div class="progress">
-                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    </div>
+                    <div class="progress" style="height:30px;margin-bottom:5px">
+                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                            style="width: 60%; background:#F0563D">
                             PHP
                         </div>
-                        </div>
-                        <div class="progress">
-                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+                    </div>
+                    <div class="progress"  style="height:30px;margin-bottom:5px;">
+                        <div class="progress-bar progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                            style="width: 20%; background:#F0563D">
                             Larave...
-                        </div>
-                        </div>
-                    </div>
-                    <div class="skills-legend clearfix">
-                        <div style="display:inline-block" class="legend-left legend"> Beginner</div>
-                        <div style="display:inline-block" class="legend-left legend"><span style="margin-left:-25px">Proficient</span> </div>
-                        <div style="display:inline-block" class="legend-right legend"> <span style="margin-right:-20px">Expert</span></div>
-                        <div style="display:inline-block" class="legend-right legend"> Master</div>
-                    </div>
-                    <div class="languages">
-                        <h4 style="color: #EC7263"><strong>// LANGUAGES</strong></h4>
-                        <div class="row">
-                            <div class="col-md-9 languages">
-                                Polish
-                            </div>
-                            <div class="col-md-3 star">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <hr size=1 color=#5151A2 noshade style="margin-top:5px; margin-bottom: 5px">
-                        <div class="row" style="margin-top:10px">
-                            <div class="col-md-9 languages">
-                                English
-                            </div>
-                            <div class="col-md-3 star">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                            </div>
-                        </div>
-                        <hr size=1 color=#5151A2 noshade style="margin-top:5px; margin-bottom: 5px">
-                    </div>
-                    <div class="hobbies">
-                        <h4 style="color: #EC7263"><strong>// HOBBIES</strong></h4>
-                        <div style="display:inline">
-                            <label class="label label-danger" style="background:#A75265"><span class="glyphicon glyphicon-heart" style="padding:5px 5px 5px 5px"> Photography</span></label>
-                        </div>
-                        <div style="display:inline-block; margin-left:5px">
-                            <label class="label label-danger" style="background:#A75265;"><span class="glyphicon glyphicon-heart" style="padding:5px 5px 5px 5px"> Fitness</span></label>
-                        </div>
-                        <div style="display:inline">
-                            <label class="label label-danger" style="background:#A75265"><span class="glyphicon glyphicon-heart" style="padding:5px 5px 5px 5px"> Programming</span></label>
                         </div>
                     </div>
                 </div>
+                <div class="skills-legend clearfix">
+                    <div style="display:inline-block" class="legend-left legend"> Beginner</div>
+                    <div style="display:inline-block" class="legend-left legend"><span style="margin-left:-25px">Proficient</span> </div>
+                    <div style="display:inline-block" class="legend-right legend"> <span style="margin-right:-20px">Expert</span></div>
+                    <div style="display:inline-block" class="legend-right legend"> Master</div>
+                </div>
+                <div class="languages" style="margin-top:20px">
+                    <h4 style="color: #EC7263"><strong>// LANGUAGES</strong></h4>
+                    <div class="row">
+                        <div class="col-md-9 languages">
+                            Polish
+                        </div>
+                        <div class="col-md-3 star">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <hr size=1 color=#5151A2 noshade style="margin-top:10px; margin-bottom: 5px">
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-9 languages">
+                            English
+                        </div>
+                        <div class="col-md-3 star">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <hr size=1 color=#5151A2 noshade style="margin-top:5px; margin-bottom: 5px">
+                </div>
+                <div class="hobbies" style="margin-top:20px">
+                    <h4 style="color: #EC7263"><strong>// HOBBIES</strong></h4>
+                    <div style="display:inline">
+                        <label class="label label-danger" style="background:#A75265"><span class="glyphicon glyphicon-heart" style="padding:5px 5px 5px 5px"> Photography</span></label>
+                    </div>
+                    <div style="display:inline-block; margin-left:5px">
+                        <label class="label label-danger" style="background:#A75265;"><span class="glyphicon glyphicon-heart" style="padding:5px 5px 5px 5px"> Fitness</span></label>
+                    </div>
+                    <div style="display:inline">
+                        <label class="label label-danger" style="background:#A75265"><span class="glyphicon glyphicon-heart" style="padding:10px 5px 5px 5px"> Programming</span></label>
+                    </div>
+                </div>
+            </div>
 
         </div>
-</div>
+    </div>
 </body>
+
 </html>
